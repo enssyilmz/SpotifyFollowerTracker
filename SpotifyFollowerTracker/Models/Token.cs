@@ -11,3 +11,9 @@ public class TokenResponse
     [JsonProperty("expires_in")]
     public int ExpiresIn { get; set; }
 }
+
+public class SpotifyUserInfo
+{
+    public string DisplayName { get; set; }
+    public string ProfileImageUrl { get; set; }
+}

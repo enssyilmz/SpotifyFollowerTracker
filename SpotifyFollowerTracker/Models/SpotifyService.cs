@@ -81,4 +81,27 @@ public class SpotifyService
             return userInfo.followers.total;
         }
     }
+    public async Task<SpotifyUserInfo> GetUserInfoAsync(string accessToken)
+    {
+        using (var client = new HttpClient())
+        {
+            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
+
+            var response = await client.GetAsync("https://api.spotify.com/v1/me");
+            var result = await response.Content.ReadAsStringAsync();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception($"Spotify API hatası: {response.StatusCode}, {result}");
+            }
+
+            var userInfo = JsonConvert.DeserializeObject<dynamic>(result);
+            return new SpotifyUserInfo
+            {
+                DisplayName = userInfo.display_name,
+                ProfileImageUrl = userInfo.images.Count > 0 ? (string)userInfo.images[0].url : null
+            };
+        }
+
+    }
 }

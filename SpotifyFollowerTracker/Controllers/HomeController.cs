@@ -39,8 +39,12 @@ public class HomeController : Controller
         }
 
         var followerCount = await _spotifyService.GetFollowerCountAsync(accessToken);
+        var userInfo = await _spotifyService.GetUserInfoAsync(accessToken);
+
         ViewBag.AccessToken = accessToken;
         ViewBag.FollowerCount = followerCount;
+        ViewBag.DisplayName = userInfo.DisplayName;
+        ViewBag.ProfileImageUrl = userInfo.ProfileImageUrl;
         return View("Dashboard"); // Dashboard.cshtml'e yönlendir
     }
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\enssy\\OneDrive\\Masaüstü\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj": {}
+    "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\enssy\\OneDrive\\Masaüstü\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj": {
+    "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\enssy\\OneDrive\\Masaüstü\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj",
+        "projectUniqueName": "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj",
         "projectName": "SpotifyFollowerTracker",
-        "projectPath": "C:\\Users\\enssy\\OneDrive\\Masaüstü\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj",
+        "projectPath": "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj",
         "packagesPath": "C:\\Users\\enssy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\enssy\\OneDrive\\Masaüstü\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\obj\\",
+        "outputPath": "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

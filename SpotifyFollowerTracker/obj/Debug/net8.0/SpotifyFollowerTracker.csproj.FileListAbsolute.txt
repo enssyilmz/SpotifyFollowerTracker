@@ -100,3 +100,4 @@ C:\Users\enssy\OneDrive\Documents\GitHub\SpotifyFollowerTracker\SpotifyFollowerT
 C:\Users\enssy\OneDrive\Documents\GitHub\SpotifyFollowerTracker\SpotifyFollowerTracker\obj\Debug\net8.0\SpotifyF.51010367.Up2Date
 C:\Users\enssy\OneDrive\Documents\GitHub\SpotifyFollowerTracker\SpotifyFollowerTracker\obj\Debug\net8.0\SpotifyFollowerTracker.genruntimeconfig.cache
 C:\Users\enssy\OneDrive\Documents\GitHub\SpotifyFollowerTracker\SpotifyFollowerTracker\obj\Debug\net8.0\ref\SpotifyFollowerTracker.dll
+C:\Users\enssy\OneDrive\Documents\GitHub\SpotifyFollowerTracker\SpotifyFollowerTracker\obj\Debug\net8.0\SpotifyFollowerTracker.sourcelink.json

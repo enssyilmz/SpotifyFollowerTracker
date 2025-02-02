@@ -3,14 +3,21 @@
 }
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-
-<body class="bg-dark text-light">
-    <div class="container text-light d-flex flex-column align-items-center justify-content-center" style="height: 75vh">
-        <div class="text-center">
-            <h3>Takipçi Sayısı: <span id="followerCount">@ViewBag.FollowerCount</span></h3>
-            <a href="/Home/Logout" class="btn btn-logout">
-                <i class="fas fa-sign-out-alt"></i> Spotify'dan çıkış yap!
-            </a>
+<body class="bg-dark">
+    <div class="container d-flex flex-column align-items-center justify-content-center" style="height: 75vh">
+        <div class="text-center d-flex align-items-center">
+            <div class="mr-4">
+                <div class="profile-img-container">
+                    <img src="@ViewBag.ProfileImageUrl" alt="Profil Fotoğrafı" class="profile-img" />
+                </div>
+            </div>
+            <div class="text-start text-light">
+                <h1><strong>@ViewBag.DisplayName</strong></h1>
+                <p><span id="followerCount">@ViewBag.FollowerCount</span> Takipçi</p>
+                <a href="/Home/Logout" class="btn btn-logout">
+                    <i class="fas fa-sign-out-alt"></i> Spotify'dan çıkış yap!
+                </a>
+            </div>
         </div>
     </div>
 </body>
@@ -22,19 +29,28 @@
             $('#followerCount').text(data);
         });
     }
-    setInterval(updateFollowerCount, 1000); 
+    setInterval(updateFollowerCount, 1000);
 </script>
 
 <style>
+    .profile-img-container {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 10px;
+    }
+    .profile-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
     .btn-logout {
         background-color: #E63946;
         color: white;
         border: none;
         padding: 10px 20px;
         font-size: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         border-radius: 5px;
         text-decoration: none;
         font-weight: bold;
@@ -42,12 +58,14 @@
         transition: background-color 0.3s;
         margin: 10px auto;
     }
-    .btn-logout i {
+
+        .btn-logout i {
             font-size: 18px;
             margin-right: 8px;
-    }
-    .btn-logout:hover {
+        }
+
+        .btn-logout:hover {
             background-color: #D62828;
             text-decoration: none;
-    }
+        }
 </style>
