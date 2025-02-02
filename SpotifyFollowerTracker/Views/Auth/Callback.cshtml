@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Spotify Callback";
+}
+
+<div class="text-center">
+    <h2>Spotify Callback</h2>
+    @if (ViewBag.Error != null)
+    {
+        <div style="color: red;">@ViewBag.Error</div>
+    }
+    else
+    {
+        <p>Takipçi sayınız: <strong>@ViewBag.FollowerCount</strong></p>
+    }
+</div>

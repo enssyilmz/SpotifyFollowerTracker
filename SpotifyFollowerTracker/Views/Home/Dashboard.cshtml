@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Kontrol Paneli";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+<body class="bg-dark text-light">
+    <div class="container text-light d-flex flex-column align-items-center justify-content-center" style="height: 75vh">
+        <div class="text-center">
+            <h3>Takipçi Sayısı: <span id="followerCount">@ViewBag.FollowerCount</span></h3>
+            <a href="/Home/Logout" class="btn btn-logout">
+                <i class="fas fa-sign-out-alt"></i> Spotify'dan çıkış yap!
+            </a>
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function updateFollowerCount() {
+        $.get('/Home/GetFollowerCount', function (data) {
+            $('#followerCount').text(data);
+        });
+    }
+    setInterval(updateFollowerCount, 1000); 
+</script>
+
+<style>
+    .btn-logout {
+        background-color: #E63946;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        width: fit-content;
+        transition: background-color 0.3s;
+        margin: 10px auto;
+    }
+    .btn-logout i {
+            font-size: 18px;
+            margin-right: 8px;
+    }
+    .btn-logout:hover {
+            background-color: #D62828;
+            text-decoration: none;
+    }
+</style>

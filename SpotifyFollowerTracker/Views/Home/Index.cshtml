@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Giriş Sayfası";
+}
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+
+<body class="bg-dark text-light">
+    <div class="container text-light d-flex flex-column align-items-center justify-content-center" style="height: 75vh">
+        <a href="/Home/Login" class="btn btn-spotify d-flex align-items-center">
+            <i class="fi fi-brands-spotify"></i>
+            Spotify ile giriş yap!
+        </a>
+    </div>
+</body>
+
+<style>
+    .btn-spotify {
+        background-color: #1DB954;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        width: fit-content; /* Butonu içeriğe göre küçültür */
+        transition: background-color 0.3s;
+    }
+        .btn-spotify i {
+            font-size: 20px;
+            margin-right: 10px; 
+        }
+
+        .btn-spotify:hover {
+            background-color: #1aa34a;
+            text-decoration: none;
+        }
+</style>
