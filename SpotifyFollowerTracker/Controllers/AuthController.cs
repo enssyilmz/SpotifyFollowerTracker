@@ -23,7 +23,7 @@ public class AuthController : Controller
             return View();
         }
 
-        var redirectUri = "https://localhost:7036/auth/callback";
+        var redirectUri = "https://spotifyfollowertracker-production.up.railway.app/auth/callback";
         var tokenResponse = await _spotifyService.GetAccessTokenAsync(code, redirectUri);
 
         Console.WriteLine($"Token Response: {tokenResponse?.AccessToken}");
