@@ -1,18 +1,22 @@
-# Temel imajý al
+# Temel görüntü olarak .NET SDK'yý kullanýn
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
+EXPOSE 80
 
-# Proje dosyasýný kopyala
+# .NET SDK'yý kullanarak uygulamayý derleyin
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY ["SpotifyFollowerTracker/SpotifyFollowerTracker.csproj", "SpotifyFollowerTracker/"]
+RUN dotnet restore "SpotifyFollowerTracker/SpotifyFollowerTracker.csproj"
 COPY . .
+WORKDIR "/src/SpotifyFollowerTracker"
+RUN dotnet build "SpotifyFollowerTracker.csproj" -c Release -o /app/build
 
-# Baðýmlýlýklarý yükle
-RUN dotnet restore /app/SpotifyFollowerTracker.sln
+FROM build AS publish
+RUN dotnet publish "SpotifyFollowerTracker.csproj" -c Release -o /app/publish
 
-# Uygulamayý derle
-RUN dotnet build /app/SpotifyFollowerTracker.sln -c Release -o /app/build
-
-# Çalýþtýrma aþamasý
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+# Son adýmda, yayýnlanmýþ dosyalarý uygulama ortamýna taþýyýn
+FROM base AS final
 WORKDIR /app
-COPY --from=base /app/build .
+COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "SpotifyFollowerTracker.dll"]
