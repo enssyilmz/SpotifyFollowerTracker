@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SpotifyFollowerTracker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80b83c4e11b4044f5d7138c57f322ac822ef7742")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57a088c80894199db7b31377cb510281d528f8d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("SpotifyFollowerTracker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SpotifyFollowerTracker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
