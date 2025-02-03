@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AD97634F-E2E8-48CA-B2FE-495CDF125FA7}|SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj|c:\\users\\enssy\\onedrive\\documents\\github\\spotifyfollowertracker\\spotifyfollowertracker\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AD97634F-E2E8-48CA-B2FE-495CDF125FA7}|SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj|solutionrelative:spotifyfollowertracker\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AD97634F-E2E8-48CA-B2FE-495CDF125FA7}|SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj|c:\\users\\enssy\\onedrive\\documents\\github\\spotifyfollowertracker\\spotifyfollowertracker\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{AD97634F-E2E8-48CA-B2FE-495CDF125FA7}|SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj|solutionrelative:spotifyfollowertracker\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
@@ -27,25 +23,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Dashboard.cshtml",
-              "DocumentMoniker": "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\Views\\Home\\Dashboard.cshtml",
-              "RelativeDocumentMoniker": "SpotifyFollowerTracker\\Views\\Home\\Dashboard.cshtml",
-              "ToolTip": "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\Views\\Home\\Dashboard.cshtml",
-              "RelativeToolTip": "SpotifyFollowerTracker\\Views\\Home\\Dashboard.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-03T17:39:04.432Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "DockerFile",
               "DocumentMoniker": "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\DockerFile",
               "RelativeDocumentMoniker": "SpotifyFollowerTracker\\DockerFile",
               "ToolTip": "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\DockerFile",
               "RelativeToolTip": "SpotifyFollowerTracker\\DockerFile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-02-03T17:34:30.594Z",
               "EditorCaption": ""
