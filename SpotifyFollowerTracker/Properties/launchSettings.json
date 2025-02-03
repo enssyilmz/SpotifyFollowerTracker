@@ -14,7 +14,7 @@
             "commandName": "Project",
             "dotnetRunMessages": true,
             "launchBrowser": true,
-            "applicationUrl": "https://spotifyfollowertracker-production.up.railway.app/auth/callback",
+            "applicationUrl": "https://spotifyfollowertracker.up.railway.app/auth/callback",
             "environmentVariables": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             }
