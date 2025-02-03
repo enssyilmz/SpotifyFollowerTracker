@@ -18,7 +18,7 @@ public class HomeController : Controller
         _memoryCache.Remove("AccessToken");
         _memoryCache.Remove("RefreshToken");
         _memoryCache.Remove("ExpiresAt");
-        return RedirectToAction("Index"); // Logout sonrası Index.cshtml'e yönlendir
+        return RedirectToAction("Index");
     }
 
     public IActionResult Login()
@@ -27,7 +27,7 @@ public class HomeController : Controller
         var redirectUri = "https://localhost:7036/auth/callback";
         var scopes = "user-follow-read";
         var authUrl = $"https://accounts.spotify.com/authorize?client_id={clientId}&response_type=code&redirect_uri={redirectUri}&scope={scopes}";
-        return Redirect(authUrl); // Spotify'a yönlendir
+        return Redirect(authUrl);
     }
 
     public async Task<IActionResult> Index()
@@ -35,7 +35,7 @@ public class HomeController : Controller
         if (!_memoryCache.TryGetValue("AccessToken", out string accessToken))
         {
             ViewBag.Error = "AccessToken bulunamadı. Lütfen giriş yapın.";
-            return View(); // Index.cshtml'e yönlendir
+            return View();
         }
 
         var followerCount = await _spotifyService.GetFollowerCountAsync(accessToken);
@@ -45,14 +45,14 @@ public class HomeController : Controller
         ViewBag.FollowerCount = followerCount;
         ViewBag.DisplayName = userInfo.DisplayName;
         ViewBag.ProfileImageUrl = userInfo.ProfileImageUrl;
-        return View("Dashboard"); // Dashboard.cshtml'e yönlendir
+        return View("Dashboard");
     }
 
     public async Task<IActionResult> GetFollowerCount()
     {
         if (!_memoryCache.TryGetValue("AccessToken", out string accessToken))
         {
-            return Json(0); // Token yoksa 0 döndür
+            return Json(0);
         }
 
         var followerCount = await _spotifyService.GetFollowerCountAsync(accessToken);
