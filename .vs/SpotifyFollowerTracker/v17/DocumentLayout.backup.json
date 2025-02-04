@@ -5,18 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AD97634F-E2E8-48CA-B2FE-495CDF125FA7}|SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj|c:\\users\\enssy\\onedrive\\documents\\github\\spotifyfollowertracker\\spotifyfollowertracker\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD97634F-E2E8-48CA-B2FE-495CDF125FA7}|SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj|solutionrelative:spotifyfollowertracker\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD97634F-E2E8-48CA-B2FE-495CDF125FA7}|SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj|c:\\users\\enssy\\onedrive\\documents\\github\\spotifyfollowertracker\\spotifyfollowertracker\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD97634F-E2E8-48CA-B2FE-495CDF125FA7}|SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj|solutionrelative:spotifyfollowertracker\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD97634F-E2E8-48CA-B2FE-495CDF125FA7}|SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj|c:\\users\\enssy\\onedrive\\documents\\github\\spotifyfollowertracker\\spotifyfollowertracker\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AD97634F-E2E8-48CA-B2FE-495CDF125FA7}|SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj|solutionrelative:spotifyfollowertracker\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD97634F-E2E8-48CA-B2FE-495CDF125FA7}|SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj|c:\\users\\enssy\\onedrive\\documents\\github\\spotifyfollowertracker\\spotifyfollowertracker\\services\\followertrackerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD97634F-E2E8-48CA-B2FE-495CDF125FA7}|SpotifyFollowerTracker\\SpotifyFollowerTracker.csproj|solutionrelative:spotifyfollowertracker\\services\\followertrackerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,50 +14,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FollowerTrackerService.cs",
-              "DocumentMoniker": "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\Services\\FollowerTrackerService.cs",
-              "RelativeDocumentMoniker": "SpotifyFollowerTracker\\Services\\FollowerTrackerService.cs",
-              "ToolTip": "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\Services\\FollowerTrackerService.cs",
-              "RelativeToolTip": "SpotifyFollowerTracker\\Services\\FollowerTrackerService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBkAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T12:10:15.398Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Dashboard.cshtml",
-              "DocumentMoniker": "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\Views\\Home\\Dashboard.cshtml",
-              "RelativeDocumentMoniker": "SpotifyFollowerTracker\\Views\\Home\\Dashboard.cshtml",
-              "ToolTip": "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\Views\\Home\\Dashboard.cshtml",
-              "RelativeToolTip": "SpotifyFollowerTracker\\Views\\Home\\Dashboard.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-04T12:06:25.744Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "SpotifyFollowerTracker\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "SpotifyFollowerTracker\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T21:05:47.048Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -79,9 +28,9 @@
               "RelativeDocumentMoniker": "SpotifyFollowerTracker\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\enssy\\OneDrive\\Documents\\GitHub\\SpotifyFollowerTracker\\SpotifyFollowerTracker\\Controllers\\AuthController.cs",
               "RelativeToolTip": "SpotifyFollowerTracker\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwCMAAABsAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T20:13:15.094Z",
+              "WhenOpened": "2025-02-04T15:18:14.509Z",
               "EditorCaption": ""
             }
           ]
