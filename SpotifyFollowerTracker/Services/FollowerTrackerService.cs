@@ -1,68 +1,65 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
+using System;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 
 public class FollowerTrackerService : BackgroundService
 {
     private readonly SpotifyService _spotifyService;
-    private readonly SmsService _smsService; 
+    private readonly SmsService _smsService;
     private readonly IMemoryCache _cache;
+    private readonly string _followerCountFile = "follower_count.txt";
+
     public FollowerTrackerService(SpotifyService spotifyService, SmsService smsService, IMemoryCache cache)
     {
         _spotifyService = spotifyService;
         _smsService = smsService;
         _cache = cache;
     }
+
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        int previousFollowerCount = LoadFollowerCountFromFile();
+
         while (!stoppingToken.IsCancellationRequested)
         {
-            bool isLoggedOut = _cache.TryGetValue("IsLoggedOut", out bool loggedOut) && loggedOut;
-            if (isLoggedOut)
-            {
-                Console.WriteLine("Kullanıcı logout oldu; takipçi kontrolü durduruldu.");
-                _cache.Set("FollowerCount", 0, TimeSpan.FromHours(1));
-                await Task.Delay(TimeSpan.FromSeconds(1), stoppingToken);
-                continue;
-            }
             try
             {
                 var accessToken = _cache.Get<string>("AccessToken");
                 var refreshToken = _cache.Get<string>("RefreshToken");
-                var expiresAt = _cache.Get<DateTime?>("ExpiresAt");
 
-                if (string.IsNullOrEmpty(accessToken) || string.IsNullOrEmpty(refreshToken) || expiresAt == null)
+                if (string.IsNullOrEmpty(accessToken) || string.IsNullOrEmpty(refreshToken))
                 {
                     Console.WriteLine("⚠ Henüz yetkilendirme yapılmadı. Takipçi kontrolü bekletiliyor.");
                     await Task.Delay(TimeSpan.FromSeconds(1), stoppingToken);
                     continue;
                 }
-                if (expiresAt <= DateTime.UtcNow)
-                {
-                    var newToken = await _spotifyService.RefreshAccessTokenAsync(refreshToken);
-                    _cache.Set("AccessToken", newToken.AccessToken, TimeSpan.FromHours(1));
-                    _cache.Set("RefreshToken", newToken.RefreshToken, TimeSpan.FromDays(30));
-                    _cache.Set("ExpiresAt", DateTime.UtcNow.AddSeconds(newToken.ExpiresIn), TimeSpan.FromHours(1));
-                    accessToken = newToken.AccessToken;
-                }
 
                 var currentFollowerCount = await _spotifyService.GetFollowerCountAsync(accessToken);
                 Console.WriteLine($"🔄 Güncel takipçi sayısı: {currentFollowerCount}");
 
-                int cachedFollowerCount;
-                if (!_cache.TryGetValue("FollowerCount", out cachedFollowerCount))
+                if (currentFollowerCount == 0 && previousFollowerCount > 0)
                 {
-                    cachedFollowerCount = 0;
+                    Console.WriteLine("⚠ API hatası olabilir. Önceki takipçi sayısı korunuyor.");
+                    currentFollowerCount = previousFollowerCount;
                 }
 
-                _cache.Set("FollowerCount", currentFollowerCount, TimeSpan.FromSeconds(5));
-                Console.WriteLine($"🔄 Önceki (cache'deki) takipçi sayısı: {cachedFollowerCount}");
+                Console.WriteLine($"📊 Önceki takipçi sayısı: {previousFollowerCount}");
+
+                if (!_cache.TryGetValue("FollowerCount", out int cachedFollowerCount))
+                {
+                    cachedFollowerCount = previousFollowerCount;
+                }
 
                 if (currentFollowerCount != cachedFollowerCount)
                 {
                     Console.WriteLine($"🔔 Takipçi değişikliği tespit edildi! Eski: {cachedFollowerCount}, Yeni: {currentFollowerCount}");
+
                     var message = currentFollowerCount > cachedFollowerCount
                         ? "Takipçi sayınız arttı!"
                         : "Takipçi sayınız azaldı!";
-                    string phoneNumber = "+905389137670"; 
+                    string phoneNumber = "+905389137670";
 
                     Console.WriteLine("📩 SMS gönderiliyor...");
                     try
@@ -74,12 +71,15 @@ public class FollowerTrackerService : BackgroundService
                     {
                         Console.WriteLine($"❌ SMS gönderme hatası: {smsEx.Message}");
                     }
-                    _cache.Set("FollowerCount", currentFollowerCount, TimeSpan.FromHours(1));
                 }
                 else
                 {
-                    Console.WriteLine("🔄 Takipçi sayısında değişiklik yok.");
+                    Console.WriteLine("✅ Takipçi sayısında değişiklik yok.");
                 }
+
+                previousFollowerCount = currentFollowerCount;
+                SaveFollowerCountToFile(currentFollowerCount);
+                _cache.Set("FollowerCount", currentFollowerCount, TimeSpan.FromMinutes(30));
             }
             catch (Exception ex)
             {
@@ -88,5 +88,23 @@ public class FollowerTrackerService : BackgroundService
 
             await Task.Delay(TimeSpan.FromSeconds(1), stoppingToken);
         }
+    }
+
+
+    private int LoadFollowerCountFromFile()
+    {
+        if (File.Exists(_followerCountFile))
+        {
+            if (int.TryParse(File.ReadAllText(_followerCountFile), out int count))
+            {
+                return count;
+            }
+        }
+        return 0;
+    }
+
+    private void SaveFollowerCountToFile(int count)
+    {
+        File.WriteAllText(_followerCountFile, count.ToString());
     }
 }

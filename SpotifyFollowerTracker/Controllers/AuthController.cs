@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
-using System;
-using System.Threading.Tasks;
-
 public class AuthController : Controller
 {
     private readonly SpotifyService _spotifyService;
@@ -34,13 +31,13 @@ public class AuthController : Controller
             ViewBag.ShowLoginButton = true;
             return View();
         }
-        _cache.Set("AccessToken", tokenResponse.AccessToken, TimeSpan.FromHours(1));
+        _cache.Set("AccessToken", tokenResponse.AccessToken);
         _cache.Set("RefreshToken", tokenResponse.RefreshToken, TimeSpan.FromDays(30));
-        _cache.Set("ExpiresAt", DateTime.UtcNow.AddSeconds(tokenResponse.ExpiresIn), TimeSpan.FromHours(1));
+        _cache.Set("ExpiresAt", DateTime.UtcNow.AddSeconds(tokenResponse.ExpiresIn));
         _cache.Remove("IsLoggedOut");
 
         var followerCount = await _spotifyService.GetFollowerCountAsync(tokenResponse.AccessToken);
-        _cache.Set("FollowerCount", followerCount, TimeSpan.FromHours(1));
+        _cache.Set("FollowerCount", followerCount);
 
         return RedirectToAction("Index", "Home");
     }
