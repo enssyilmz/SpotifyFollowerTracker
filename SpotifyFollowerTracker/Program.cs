@@ -1,6 +1,5 @@
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMemoryCache();
-#nullable disable
 builder.Services.AddSingleton<SpotifyService>(sp =>
 {
     var config = sp.GetRequiredService<IConfiguration>();
@@ -19,7 +18,7 @@ builder.Services.AddSingleton<SmsService>(sp =>
         config["Twilio:PhoneNumber"]
     );
 });
-#nullable enable
+
 
 builder.Services.AddHostedService<FollowerTrackerService>();
 builder.Services.AddControllersWithViews();
@@ -33,8 +32,13 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+app.UseCors(builder =>
+{
+    builder.AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader();
+});
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
