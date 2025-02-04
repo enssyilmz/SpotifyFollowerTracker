@@ -46,12 +46,14 @@ public class FollowerTrackerService : BackgroundService
 
                 var currentFollowerCount = await _spotifyService.GetFollowerCountAsync(accessToken);
                 Console.WriteLine($"🔄 Güncel takipçi sayısı: {currentFollowerCount}");
+
                 int cachedFollowerCount;
                 if (!_cache.TryGetValue("FollowerCount", out cachedFollowerCount))
                 {
-                    cachedFollowerCount = currentFollowerCount;
-                    _cache.Set("FollowerCount", currentFollowerCount, TimeSpan.FromHours(1));
+                    cachedFollowerCount = 0;
                 }
+
+                _cache.Set("FollowerCount", currentFollowerCount, TimeSpan.FromSeconds(5));
                 Console.WriteLine($"🔄 Önceki (cache'deki) takipçi sayısı: {cachedFollowerCount}");
 
                 if (currentFollowerCount != cachedFollowerCount)
