@@ -20,7 +20,7 @@ public class AuthController : Controller
             return View();
         }
 
-        var redirectUri = "https://spotifyfollowertracker.onrender.com/auth/callback";
+        var redirectUri = "https://spotifyfollowerstracker.netlify.app/auth/callback";
         var tokenResponse = await _spotifyService.GetAccessTokenAsync(code, redirectUri);
 
         Console.WriteLine($"Token Response: {tokenResponse?.AccessToken}");
