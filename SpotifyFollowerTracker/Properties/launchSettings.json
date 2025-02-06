@@ -22,7 +22,7 @@
         "commandName": "Project",
         "dotnetRunMessages": true,
         "launchBrowser": true,
-        "applicationUrl": "https://spotifyfollowerstracker.netlify.app/auth/callback;http://localhost:5131",
+        "applicationUrl": "https://spotifyfollowertracker.up.railway.app/auth/callback;http://localhost:5131",
         "environmentVariables": {
             "ASPNETCORE_ENVIRONMENT": "Development"
         }

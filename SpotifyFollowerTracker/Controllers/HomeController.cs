@@ -24,7 +24,7 @@ public class HomeController : Controller
     public IActionResult Login()
     {
         var clientId = "84aab6d08ff54d38b5a01d7007ea7718";
-        var redirectUri = "https://spotifyfollowerstracker.netlify.app/auth/callback";
+        var redirectUri = "https://spotifyfollowertracker.up.railway.app/auth/callback";
         var scopes = "user-follow-read";
         var authUrl = $"https://accounts.spotify.com/authorize?client_id={clientId}&response_type=code&redirect_uri={redirectUri}&scope={scopes}";
         return Redirect(authUrl);
